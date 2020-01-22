@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4AC12EB0-FC95-495F-B25B-A92B65902695}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JkumParser</RootNamespace>
-    <AssemblyName>JkumParser</AssemblyName>
+    <ProjectGuid>{FBD00008-1578-4F89-B873-8B96870C7239}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>JkumTests</RootNamespace>
+    <AssemblyName>JkumTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,28 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\GuidConverter.cs" />
-    <Compile Include="Models\IModel.cs" />
-    <Compile Include="Models\Jkum.cs" />
-    <Compile Include="Models\Head.cs" />
-    <Compile Include="Models\Lid.cs" />
-    <Compile Include="Models\Manhole.cs" />
-    <Compile Include="Models\ManholeCircumference.cs" />
-    <Compile Include="Models\ManholeLink.cs" />
-    <Compile Include="Models\Point3d.cs" />
-    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="JkumReader.cs" />
-    <Compile Include="JkumWriter.cs" />
-    <Compile Include="JkumSchemaValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Schema\jkum-schema-1.0.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JkumParser\JkumParser.csproj">
+      <Project>{4ac12eb0-fc95-495f-b25b-a92b65902695}</Project>
+      <Name>JkumParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
