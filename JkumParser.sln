@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JkumParser", "JkumParser\JkumParser.csproj", "{4AC12EB0-FC95-495F-B25B-A92B65902695}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AC12EB0-FC95-495F-B25B-A92B65902695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC12EB0-FC95-495F-B25B-A92B65902695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC12EB0-FC95-495F-B25B-A92B65902695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC12EB0-FC95-495F-B25B-A92B65902695}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39294475-368C-4369-866A-B0A456406CE1}
+	EndGlobalSection
+EndGlobal
