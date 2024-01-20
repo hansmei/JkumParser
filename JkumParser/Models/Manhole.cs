@@ -12,8 +12,8 @@ namespace JkumParser
     {
         [JsonProperty(PropertyName = "guid",  Required = Newtonsoft.Json.Required.Always)]
         public string Guid { get; set; }
-        [JsonProperty(PropertyName = "elementId", NullValueHandling = NullValueHandling.Ignore)]
-        public string ElementId { get; set; }
+        [JsonProperty(PropertyName = "sid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sid { get; set; }
         [JsonProperty(PropertyName = "bottomCenter", NullValueHandling = NullValueHandling.Ignore)]
         public Point3d BottomCenter { get; set; }
         [JsonProperty(PropertyName = "shape", NullValueHandling = NullValueHandling.Ignore)]
@@ -24,22 +24,16 @@ namespace JkumParser
         public int Width { get; set; }
         [JsonProperty(PropertyName = "length", NullValueHandling = NullValueHandling.Ignore)]
         public int Length { get; set; }
-        [JsonProperty(PropertyName = "rotation", NullValueHandling = NullValueHandling.Ignore)]
-        public int Rotation { get; set; }
         [JsonProperty(PropertyName = "material", NullValueHandling = NullValueHandling.Ignore)]
         public string Material { get; set; }
-        [JsonProperty(PropertyName = "imageString", NullValueHandling = NullValueHandling.Ignore)]
-        public string ImageString { get; set; }
-        [JsonProperty(PropertyName = "imageType", NullValueHandling = NullValueHandling.Ignore)]
-        public string ImageType { get; set; }
-        [JsonProperty(PropertyName = "imageRelativePath", NullValueHandling = NullValueHandling.Ignore)]
-        public string ImageRelativePath { get; set; }
+        [JsonProperty(PropertyName = "imageData", NullValueHandling = NullValueHandling.Ignore)]
+        public List<ImageData> ImageData { get; set; }
 
         [JsonProperty(PropertyName = "lids", NullValueHandling = NullValueHandling.Ignore)]
         public List<Lid> Lids { get; set; }
 
-        [JsonProperty(PropertyName = "links", NullValueHandling = NullValueHandling.Ignore)]
-        public List<ManholeLink> Links { get; set; }
+        [JsonProperty(PropertyName = "pipeConnections", NullValueHandling = NullValueHandling.Ignore)]
+        public List<PipeConnection> PipeConnections { get; set; }
 
         [JsonProperty(PropertyName = "circumference", NullValueHandling = NullValueHandling.Ignore)]
         public ManholeCircumference Circumference { get; set; }

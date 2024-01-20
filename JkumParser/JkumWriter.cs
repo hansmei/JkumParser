@@ -28,7 +28,7 @@ namespace JkumParser
             this.jkum.Head = head;
         }
 
-        public void SetHead(string epsg)
+        public void SetHead(int epsg)
         {
             Head head = new Head();
             head.EPSG = epsg;
@@ -36,7 +36,7 @@ namespace JkumParser
             this.SetHead(head);
         }
 
-        public void SetHead(string epsg, string author)
+        public void SetHead(int epsg, string author)
         {
             Head head = new Head();
             head.EPSG = epsg;
@@ -45,7 +45,7 @@ namespace JkumParser
             this.SetHead(head);
         }
 
-        public void SetHead(string epsg, string author, string date)
+        public void SetHead(int epsg, string author, string date)
         {
             Head head = new Head();
             head.EPSG = epsg;

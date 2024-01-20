@@ -11,7 +11,7 @@ namespace JkumParser
     public class Head : ModelBase
     {
         [JsonProperty(PropertyName = "epsg", Required = Required.Always)]
-        public string EPSG { get; set; }
+        public int EPSG { get; set; }
         [JsonProperty(PropertyName = "date", NullValueHandling = NullValueHandling.Include)]
         public string Date { get; set; }
         [JsonProperty(PropertyName = "author", NullValueHandling = NullValueHandling.Include)]

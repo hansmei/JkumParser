@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>JkumParser</RootNamespace>
     <AssemblyName>JkumParser</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,13 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\GuidConverter.cs" />
+    <Compile Include="Models\ImageData.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Jkum.cs" />
     <Compile Include="Models\Head.cs" />
     <Compile Include="Models\Lid.cs" />
     <Compile Include="Models\Manhole.cs" />
     <Compile Include="Models\ManholeCircumference.cs" />
-    <Compile Include="Models\ManholeLink.cs" />
+    <Compile Include="Models\PipeConnection.cs" />
     <Compile Include="Models\Point3d.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

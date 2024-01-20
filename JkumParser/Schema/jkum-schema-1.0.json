@@ -15,12 +15,15 @@
       ],
       "properties": {
         "epsg": {
-          "type": "string",
+          "type": "integer",
           "default": "",
           "examples": [
-            "25832"
+            25832,
+            25832,
+            5110,
+            5111
           ],
-          "pattern": "^[0-9]{4,}$"
+          "pattern": "^[0-9]{4,5}$"
         },
         "date": {
           "type": "string",
@@ -97,6 +100,17 @@
         "diameter"
       ]
     },
+    "imageData": {
+      "type": "object",
+      "properties": {
+        "base64String": {
+          "type": "string"
+        },
+      },
+      "required": [
+        "base64String"
+      ]
+    },
     "manhole": {
       "type": "object",
       "required": [
@@ -108,7 +122,7 @@
         "guid": {
           "$ref": "#/definitions/guid"
         },
-        "elementId": {
+        "sid": {
           "type": "string",
           "default": "",
           "examples": [
@@ -149,16 +163,10 @@
         "length": {
           "type": "integer",
           "examples": [
-            1600
-          ]
-        },
-        "rotation": {
-          "type": "integer",
-          "title": "Clockwise cone or rectangular manhole rotation",
-          "description": "The rotation on a clock dial in degrees (0 - 360), starting at 12 O'clock, with positive numbers going clockwise",
-          "default": 0,
-          "examples": [
-            120
+            1600,
+            1400,
+            1200,
+            400
           ]
         },
         "lids": {
@@ -167,16 +175,22 @@
             "$ref": "#/definitions/lid"
           }
         },
-        "links": {
+        "pipes": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/manholeLink"
+            "$ref": "#/definitions/pipeConnection"
           }
         },
         "circumference": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/manholeCircumference"
+          }
+        },
+        "imageData": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/imageData"
           }
         }
       }
@@ -207,7 +221,7 @@
         }
       }
     },
-    "manholeLink": {
+    "pipeConnection": {
       "type": [
         "object",
         "null"
@@ -216,7 +230,7 @@
         "guid": {
           "$ref": "#/definitions/guid"
         },
-        "elementId": {
+        "sid": {
           "type": "string",
           "examples": [
             "548861"
@@ -226,8 +240,12 @@
           "type": "string",
           "title": "The medium transported in the pipe",
           "examples": [
-            "Water"
-          ]
+            "Water",
+            "Sewer",
+            "Storm water",
+            "Drain"
+          ],
+          "enum": [ "Water", "Sewer", "Storm water", "Drain" ]
         },
         "direction": {
           "type": "string",
@@ -235,7 +253,7 @@
           "examples": [
             "Ingoing"
           ],
-          "enum": [ "Ingoing", "Outgoing"]
+          "enum": [ "Ingoing", "Outgoing" ]
         },
         "pressurized": {
           "type": "boolean",

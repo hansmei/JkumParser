@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 namespace JkumParser
 {
     [Serializable]
-    public class ManholeLink : ModelBase
+    public class PipeConnection : ModelBase
     {
         [JsonProperty(PropertyName = "guid", Required = Required.Always)]
         public string Guid { get; set; }
-        [JsonProperty(PropertyName = "elementId", NullValueHandling = NullValueHandling.Ignore)]
-        public string ElementId { get; set; }
+        [JsonProperty(PropertyName = "sid", NullValueHandling = NullValueHandling.Ignore)]
+        public string Sid { get; set; }
         [JsonProperty(PropertyName = "medium", NullValueHandling = NullValueHandling.Ignore)]
         public string Medium { get; set; }
         [JsonProperty(PropertyName = "direction", NullValueHandling = NullValueHandling.Ignore)]

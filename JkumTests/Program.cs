@@ -113,17 +113,16 @@ namespace JkumTests
             Console.WriteLine("Writing simple test file");
 
             JkumWriter writer = new JkumWriter();
-            writer.SetHead("25832", "Hans Martin Eikerol");
+            writer.SetHead(25832, "Hans Martin Eikerol");
 
             Guid guid = Guid.NewGuid();
 
             Manhole manhole = new Manhole();
             manhole.Guid = guid.ToString("D");
-            manhole.ElementId = "556001";
+            manhole.Sid = "556001";
             manhole.BottomCenter = new Point3d(588447.155, 6642743.891, 52.714);
             manhole.Shape = "Circular";
             manhole.Diameter = 1600;
-            manhole.Rotation = 0;
             manhole.Lids = new List<Lid>()
             {
                 new Lid()
@@ -132,32 +131,32 @@ namespace JkumTests
                     Diameter = 650
                 }
             };
-            manhole.Links = new List<ManholeLink>()
+            manhole.PipeConnections = new List<PipeConnection>()
             {
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
-                    ElementId = "548861",
+                    Sid = "548861",
                     Medium = "Water",
                     Pressurized = true,
                     Elevation = 53.11,
                     ClockPosition = 20,
                     Diameter = 150
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
-                    ElementId = "548862",
+                    Sid = "548862",
                     Medium = "Water",
                     Pressurized = true,
                     Elevation = 53.11,
                     ClockPosition = 200,
                     Diameter = 150
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
-                    ElementId = "548864",
+                    Sid = "548864",
                     Medium = "Water",
                     Pressurized = true,
                     Elevation = 53.11,
@@ -171,12 +170,11 @@ namespace JkumTests
 
             Manhole manhole2 = new Manhole();
             manhole2.Guid = Guid.NewGuid().ToString("D");
-            manhole2.ElementId = "522431";
+            manhole2.Sid = "522431";
             manhole2.BottomCenter = new Point3d(588429.23, 6642811.51, 53.218);
             manhole2.Shape = "Rectangular";
             manhole2.Width = 3000;
             manhole2.Length = 1200;
-            manhole2.Rotation = 20;
             manhole2.Lids = new List<Lid>()
             {
                 new Lid()
@@ -192,9 +190,9 @@ namespace JkumTests
                     Diameter = 650
                 },
             };
-            manhole2.Links = new List<ManholeLink>()
+            manhole2.PipeConnections = new List<PipeConnection>()
             {
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
                     Medium = "Water",
@@ -203,7 +201,7 @@ namespace JkumTests
                     ClockPosition = 20,
                     Diameter = 150
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
                     Medium = "Water",
@@ -212,7 +210,7 @@ namespace JkumTests
                     ClockPosition = 200,
                     Diameter = 150
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
                     Medium = "Water",
@@ -221,7 +219,7 @@ namespace JkumTests
                     ClockPosition = 110,
                     Diameter = 150
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
                     Medium = "StormWater",
@@ -231,7 +229,7 @@ namespace JkumTests
                     ClockPosition = 110,
                     Diameter = 160
                 },
-                new ManholeLink()
+                new PipeConnection()
                 {
                     Guid = Guid.NewGuid().ToString(),
                     Medium = "StormWater",
